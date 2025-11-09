@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import circuitImage from '../assets/circuit.png';
 
 const LogisimCircuit: React.FC = () => {
   const [D, setD] = useState(0);
@@ -314,9 +315,10 @@ const LogisimCircuit: React.FC = () => {
             onMouseDown={handleMouseDown}
             style={isImageZoomed ? { minWidth: '200%', userSelect: 'none' } : { width: '100%' }}
           >
-            <img 
-              src="/src/assets/circuit.png" 
-              alt="2-Bit Adder/Subtractor Circuit Diagram" 
+            <img
+              src={circuitImage}
+              alt="2-Bit Adder/Subtractor Circuit Diagram"
+              loading="lazy"
               className={`w-full h-auto transition-transform duration-300 ${
                 isImageZoomed ? 'scale-200 sm:scale-100' : 'scale-100'
               }`}
